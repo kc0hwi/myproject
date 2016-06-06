@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content = "height = device-height, width = 420, user-scalable = no" /> 
+	<title>Charlee</title>
+	<script type="text/javascript" src="/webiopi.js"></script>
+	<script type="text/javascript">
+<!--not sure what all goes here as part of the javascript and head section, using rapi-car for example-->
+		function init() {
+		}
+		function Look_Up() {
+			webiopi().callMacro("Look_Up");
+		}
+		function Go_Forward() {
+			webiopi().callMacro("Go_Forward");
+		}
+		function Look_Left() {
+			webiopi().callMacro("Look_Left");
+		}
+		function Center_Cam() {
+			webiopi().callMacro("Center_Cam");
+		}
+		function Look_Right() {
+			webiopi().callMacro("Look_Right");
+		}
+		function Turn_Left() {
+			webiopi().callMacro("Turn_Left");
+		}
+		function Stop_Bot() {
+			webiopi().callMacro("Stop_Bot");
+		}
+		function Turn_Right() {
+			webiopi().callMacro("Turn_Right");
+		}
+		function Look_Down() {
+			webiopi().callMacro("Look_Down");
+		}
+		function Go_Reverse() {
+			webiopi().callMacro("Go_Reverse");
+		}
+		function Shoulder_Up() {
+			webiopi().callMacro("Shoulder_Up");
+		}
+		function Shoulder_Down() {
+			webiopi().callMacro("Shoulder_Down");
+		}
+		function Shoulder_Left() {
+			webiopi().callMacro("Shoulder_Left");
+		}
+		function Shoulder_Right() {
+			webiopi().callMacro("Shoulder_Right");
+		}
+		function Elbow_Extend() {
+			webiopi().callMacro("Elbow_Extend");
+		}
+		function Elbow_Retract() {
+			webiopi().callMacro("Elbow_Retract");
+		}
+		function Hand_Left() {
+			webiopio().callMacro("Hand_Left");
+		}
+		function Hand_Right() {
+			webiopi().callMacro("Hand_Right");
+		}
+		function Hand_Open() {
+			webiopi().callMacro("Hand_Open");
+		}
+		function Hand_Close() {
+			webiopi().callMacro("Hand_Close");
+		}
+		webiopi().ready(init);
+		
+	</script>
+<!--style tag for button? unless I use separate css, going to use css from original cambot example-->	
+	<style type="text/css">
+		button {
+			margin: 5px 5px 5px 5px;
+			width: 90px;
+			height: 40px;
+			font-size: 12pt;
+			font-weight: bold;
+			color: black;
+			text-align: center;
+		}
+	</style>
+</head>
+<!--Section for Body, img src needs /stream/video.mjpeg added to ip address-->
+<body>
+	<center>
+		<div id="content" style="height: 100%; width: 100%;" align="center">
+			<div id="video">
+			<center><img src="http://192.168.0.103:8080/stream/video.mjpeg"
+				height="320" width="480">
+			</div>
+	<table>
+		<tr>
+			<td colspan = "3" style="text-align: center"> Camera </td>
+			<td colspan = "3" style="text-align: center"> Robot </td>
+		</tr>
+		<tr>
+			<td colspan = "3" style="text-align: center"><button type="button" onclick="Look_Up()">Look Up</button></td>
+			<td colspan = "3" style="text-align: center"><button type="button" onmousedown="Go_Forward()">Forward</button></td>
+		</tr>
+		<tr>
+			<td><button type="button" onmousedown="Look_Left()">Look Left</button></td>
+			<td><button type="button" onclick="Center_Cam()">Center</button></td>
+			<td><button type="button" onmousedown="Look_Right()">Look Right</button></td>
+			<td><button type="button" onmousedown="Turn_Left()">Left</button></td>
+			<td><button type="button" onclick="Stop_Bot()">Stop</button></td>
+			<td><button type="button" onmousedown="Turn_Right()">Right</button></td>
+		</tr>
+		<tr>
+			<td colspan = "3" style="text-align: center"><button type="button" onclick="Look_Down()">Look Down</button></td>
+			<td colspan = "3" style="text-align: center"><button type="button" onclick="Go_Reverse()">Reverse</button></td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td colspan= "3" style="text-align: center"> Shoulder </td>
+			<td> Elbow </td>
+		</tr>
+		<tr>
+			<td colspan = "3" style="text-align: center"><button type="button" onmousedown="Shoulder_Up()">Up</button></td>
+			<td><button type="button" onmousedown="Elbow_Extend()">Extend</button></td>
+		</tr>
+		<tr>
+			<td><button type="button" onmousedown="Shoulder_Left()">Left</button></td>
+			<td></td>
+			<td><button type="button" onmousedown="Shoulder_Right()">Right</button></td>
+		</tr>
+		<tr>
+			<td colspan = "3" style="text-align: center"><button type="button" onmousedown="Shoulder_Down()">Down</button></td>
+			<td><button type="button" onmousedown="Elbow_Retract()">Retract</button></td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td colspan = "3" style="text-align: center"> Hand </td>
+		</tr>
+		<tr>
+			<td colspan = "3" style="text-align: center"><button type="button" onmousedown="Hand_Open()">OPEN</button></td>
+		</tr>
+		<tr>
+			<td><button type="button" onmousedown="Hand_Left()">Left</button></td>
+			<td></td>
+			<td><button type="button" onmousedown="Hand_Right()">Right</button></td>
+		</tr>
+		<tr>
+			<td colspan = "3" style="text-align: center"><button type="button" onmousedown="Hand_Close()">CLOSE</button></td>
+		</tr>
+	</table>
+	</div>
+	</center>
+</body>
+		
+</html>	
+		
+
+		
